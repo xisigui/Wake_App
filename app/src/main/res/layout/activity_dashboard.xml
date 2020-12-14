@@ -16,18 +16,31 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
         android:layout_marginLeft="9dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="9dp"
         android:layout_marginRight="9dp"
         android:fontFamily="sans-serif-medium"
-        android:text="WakeAPP"
-        android:textAlignment="center"
+        android:text="WakeApp"
+
         android:textColor="#FFFFFF"
         android:textFontWeight="10"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="158dp"
+        android:src="@drawable/sleep"
+        app:civ_border_color="#000000"
+        app:civ_border_width="6dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="80dp" />
 
 
     <TextView
@@ -45,6 +58,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+
 
     <TextView
         android:id="@+id/emailTextview"
@@ -117,8 +132,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="109dp"
         android:background="#70FFFFFF"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/logoutbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ageBanner" />

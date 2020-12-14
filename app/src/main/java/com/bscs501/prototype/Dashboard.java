@@ -3,6 +3,7 @@ package com.bscs501.prototype;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.constraintlayout.solver.state.State;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
@@ -44,7 +45,7 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-        LinearLayoutCompat LL = findViewById(R.id.Dashboard);
+        ConstraintLayout LL = findViewById(R.id.Dashboard);
         AnimationDrawable AD = (AnimationDrawable) LL.getBackground();
         AD.setEnterFadeDuration(2000);
         AD.setExitFadeDuration(4000);
