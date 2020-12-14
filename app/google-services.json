@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "906817320158",
+    "project_id": "wakeapp-7a883",
+    "storage_bucket": "wakeapp-7a883.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906817320158:android:19634870420024238fbe4f",
+        "android_client_info": {
+          "package_name": "com.bscs501.prototype"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906817320158-0uva2ahuu4pvu86ofmnru9dn07i358hv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaUdzQ3BJbVKI1SG5fA1tCUVziGARFbdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906817320158-0uva2ahuu4pvu86ofmnru9dn07i358hv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
