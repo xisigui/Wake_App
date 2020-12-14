@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         android:text="Button"
         tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="194dp" />
+        tools:layout_editor_absoluteY="194dp"
+        tools:ignore="MissingConstraints" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_image"
