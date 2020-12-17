@@ -28,7 +28,7 @@ import com.marozzi.roundbutton.RoundButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView registraiton, forgotpassword, showbtn, t;
+    private TextView registraiton, forgotpassword, showbtn;
     private EditText editTextEmail, editTextPassword;
     private RoundButton loginbtn;
     private FirebaseAuth mAuth;
