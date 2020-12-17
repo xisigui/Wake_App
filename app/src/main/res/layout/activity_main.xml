@@ -24,9 +24,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-
-
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="236dp"
@@ -84,22 +81,6 @@
         tools:ignore="MissingConstraints" >
         </EditText>
 
-<!--    <com.dd.morphingbutton.MorphingButton-->
-<!--        android:id="@+id/loginbtn"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="40dp"-->
-<!--        android:fontFamily="@font/visbyround_bold"-->
-<!--        android:text="LOGIN"-->
-<!--        android:textColor="#FFFFFF"-->
-<!--        android:textSize="18sp"-->
-<!--        app:backgroundTint="#FF6161"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.491"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/password"-->
-<!--        tools:ignore="MissingConstraints" />-->
-
     <com.marozzi.roundbutton.RoundButton
         android:id="@+id/loginbtn"
         android:layout_width="300dp"
@@ -116,9 +97,13 @@
         app:rb_background_color="#FF6161"
         app:rb_corner_radius="20dp"
         tools:ignore="MissingConstraints"
-        app:rb_animation_progress_color="#FF6161"
+        app:rb_animation_progress_width="2dp"
+        app:rb_animation_progress_padding="10dp"
+        app:rb_animation_duration="500"
+        app:rb_animation_progress_color="#FFFFFF"
         app:rb_animation_progress_style="circle"
         app:rb_animation_corner_radius="200dp"/>
+
     <TextView
         android:id="@+id/forgotpassword"
         android:layout_width="wrap_content"
@@ -135,10 +120,9 @@
         app:layout_constraintTop_toBottomOf="@+id/loginbtn" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="90dp"
-        android:layout_marginRight="90dp"
         android:fontFamily="@font/visbyround_regular"
         android:text="Don't have an account?"
         android:textColor="#FFFFFF"
@@ -147,29 +131,29 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.396"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginbtn"
-        app:layout_constraintVertical_bias="0.508"
+        app:layout_constraintVertical_bias="0.506"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/registrationbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="108dp"
-        android:layout_marginRight="108dp"
-        android:fontFamily="@font/visbyround_regular"
+        android:fontFamily="@font/visbyround_bold"
         android:text="Sign up"
-        android:textColor="#FF6161"
+        android:textColor="#FFFFFF"
         android:textFontWeight="10"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.506"
-        tools:ignore="MissingConstraints"
-        app:layout_constraintTop_toBottomOf="@+id/loginbtn" />
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginbtn"
+        app:layout_constraintVertical_bias="0.51"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/showbtn"

@@ -2,6 +2,7 @@ package com.bscs501.prototype;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
@@ -15,20 +16,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-//import com.example.myloadingbutton.MyLoadingButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.marozzi.roundbutton.RoundButton;
+import com.tombayley.activitycircularreveal.CircularReveal;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView registraiton, forgotpassword, showbtn;
+    private TextView registraiton, forgotpassword, showbtn, t;
     private EditText editTextEmail, editTextPassword;
     private RoundButton loginbtn;
     private FirebaseAuth mAuth;
@@ -82,7 +84,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Animation animation = AnimationUtils.loadAnimation(MainActivity.this,R.anim.shake);
         wake.startAnimation(animation);
 
-
         showbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,8 +101,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         forgotpassword = (TextView) findViewById(R.id.forgotpassword);
         forgotpassword.setOnClickListener(this);
-
-
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -121,7 +120,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
-
     private void userlogin() {
         loginbtn.startAnimation();
         String email = editTextEmail.getText().toString().trim();
@@ -130,23 +128,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(email.isEmpty()){
             editTextEmail.setError("Email is Empty");
             editTextEmail.requestFocus();
+            loginbtn.revertAnimation();
             return;
         }
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             editTextEmail.setError("Please Enter a Valid Email");
             editTextEmail.requestFocus();
+            loginbtn.revertAnimation();
             return;
         }
 
         if(password.isEmpty()){
             editTextPassword.setError("Email is empty");
             editTextPassword.requestFocus();
+            loginbtn.revertAnimation();
             return;
         }
         if(password.length() < 6){
             editTextPassword.setError("Password Length is at Least 6 Characters.");
             editTextPassword.requestFocus();
+            loginbtn.revertAnimation();
             return;
         }
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -158,18 +160,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(MainActivity.this, Dashboard.class));
                         editTextEmail.clearComposingText();
                         editTextPassword.clearComposingText();
+
                     }else {
                         user.sendEmailVerification();
                         Toast.makeText(MainActivity.this, "Please Check your Email to Verify your Account.", Toast.LENGTH_LONG).show();
+                        loginbtn.revertAnimation();
                     }
 
 
                 } else {
                     Toast.makeText(MainActivity.this, "Login Credentials in Valid, Please try again.", Toast.LENGTH_LONG).show();
-
+                    loginbtn.revertAnimation();
                 }
             }
         });
-        loginbtn.revertAnimation();
     }
 }
