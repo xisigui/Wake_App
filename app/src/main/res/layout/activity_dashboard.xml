@@ -10,17 +10,27 @@
     tools:context=".Dashboard">
 
 
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="80dp"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/banner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
         android:layout_marginLeft="9dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="9dp"
         android:layout_marginRight="9dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="WakeApp"
+        android:fontFamily="@font/visbyround_medium"
+        android:text="WAKEAPP"
+
 
         android:textColor="#FFFFFF"
         android:textFontWeight="10"
@@ -32,49 +42,38 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="158dp"
-        android:src="@drawable/sleep"
-        app:civ_border_color="#000000"
-        app:civ_border_width="6dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="80dp" />
+        android:layout_width="145dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="54dp"
 
+        android:src="@drawable/sleep"
+        app:civ_border_color="#FFF8F8"
+        app:civ_border_width="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/emailBanner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner"
+        app:layout_constraintVertical_bias="0.0"
+
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/emailBanner"
+        android:id="@+id/ageBanner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:text="Email: "
+        android:text="Age: "
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banner" />
-
-
-
-    <TextView
-        android:id="@+id/emailTextview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:background="#70FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailBanner" />
+        app:layout_constraintTop_toBottomOf="@+id/fullnameTextview" />
 
     <TextView
         android:id="@+id/fullnameBanner"
@@ -89,6 +88,7 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailTextview" />
 
@@ -98,30 +98,47 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:background="#70FFFFFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fullnameBanner" />
 
+    <Button
+        android:id="@+id/logoutbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="267dp"
+        android:background="@drawable/button_login"
+        android:text="logout"
+        android:textColor="#ffffff"
+        app:backgroundTint="#FF6161"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextview"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
-        android:id="@+id/ageBanner"
+        android:id="@+id/emailTextview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:text="Age: "
-        android:textColor="#FFFFFF"
+        android:background="#70FFFFFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullnameTextview" />
+        app:layout_constraintTop_toBottomOf="@+id/emailBanner" />
 
     <TextView
         android:id="@+id/ageTextview"
@@ -137,23 +154,36 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/logoutbtn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageBanner" />
+        app:layout_constraintTop_toBottomOf="@+id/ageBanner"
+        app:layout_constraintVertical_bias="0.2" />
 
-    <Button
-        android:id="@+id/logoutbtn"
+    <TextView
+        android:id="@+id/emailBanner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Email: "
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="267dp"
-        android:layout_marginBottom="267dp"
-        android:background="@drawable/button_login"
-        android:text="logout"
-        android:textColor="#ffffff"
-        app:backgroundTint="#FF6161"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextview" />
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="131dp"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

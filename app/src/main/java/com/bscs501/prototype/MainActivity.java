@@ -26,7 +26,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.marozzi.roundbutton.RoundButton;
-import com.tombayley.activitycircularreveal.CircularReveal;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
