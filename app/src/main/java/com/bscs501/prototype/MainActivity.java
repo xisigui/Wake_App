@@ -2,7 +2,6 @@ package com.bscs501.prototype;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -34,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText editTextEmail, editTextPassword;
     private RoundButton loginbtn;
     private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        ConstraintLayout LL = findViewById(R.id.linearLayoutCompat2);
+        ConstraintLayout LL = findViewById(R.id.Main);
         AnimationDrawable AD = (AnimationDrawable) LL.getBackground();
         AD.setEnterFadeDuration(2000);
         AD.setExitFadeDuration(4000);
@@ -157,22 +156,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(task.isSuccessful()){
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     if(user.isEmailVerified()){
-                        startActivity(new Intent(MainActivity.this, Dashboard.class));
                         editTextEmail.clearComposingText();
                         editTextPassword.clearComposingText();
+                        startActivity(new Intent(MainActivity.this, Dashboard.class));
 
                     }else {
                         user.sendEmailVerification();
                         Toast.makeText(MainActivity.this, "Please Check your Email to Verify your Account.", Toast.LENGTH_LONG).show();
                         loginbtn.revertAnimation();
                     }
-
-
                 } else {
                     Toast.makeText(MainActivity.this, "Login Credentials in Valid, Please try again.", Toast.LENGTH_LONG).show();
                     loginbtn.revertAnimation();
                 }
             }
         });
+
     }
 }

@@ -3,18 +3,13 @@ package com.bscs501.prototype;
 import androidx.annotation.NonNull;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.LinearLayoutCompat;
-import androidx.constraintlayout.solver.state.State;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -84,8 +79,5 @@ public class Dashboard extends AppCompatActivity {
                 Toast.makeText(Dashboard.this, "Something went wrong", Toast.LENGTH_LONG).show();
             }
         });
-
-
-
     }
 }

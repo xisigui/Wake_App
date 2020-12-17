@@ -27,6 +27,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
     private TextView banner;
     private ProgressBar progressBar;
     private Button registrationbtn;
+    private TextView sign;
 
     private FirebaseAuth mAuth;
 
@@ -53,6 +54,13 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         editTextPasswordMatch = (EditText) findViewById(R.id.editTextPasswordMatch);
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
+        sign = findViewById(R.id.signin);
+        sign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Registration.this, MainActivity.class));
+            }
+        });
 
     }
 
