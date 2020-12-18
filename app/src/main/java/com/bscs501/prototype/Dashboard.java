@@ -3,20 +3,13 @@ package com.bscs501.prototype;
 import androidx.annotation.NonNull;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.LinearLayoutCompat;
-import androidx.constraintlayout.solver.state.State;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,30 +28,9 @@ public class Dashboard extends AppCompatActivity {
     private DatabaseReference reference;
     private String userID;
 
-    ImageButton changeProf, imgReset;
-    ImageView profilePicture;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Picture Shit
-
-        changeProf = findViewById(R.id.changeProfilePicture);
-        imgReset = findViewById(R.id.resetImage);
-        profilePicture = findViewById(R.id.profile_image);
-
-        changeProf.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-
-
-
-        //
         setContentView(R.layout.activity_dashboard);
         logout = (Button) findViewById(R.id.logoutbtn);
         logout.setOnClickListener(new View.OnClickListener() {
@@ -107,8 +79,5 @@ public class Dashboard extends AppCompatActivity {
                 Toast.makeText(Dashboard.this, "Something went wrong", Toast.LENGTH_LONG).show();
             }
         });
-
-
-
     }
 }

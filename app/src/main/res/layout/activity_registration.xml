@@ -23,7 +23,7 @@
 
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
@@ -61,10 +61,9 @@
 
     <EditText
         android:id="@+id/editTextMiddlename"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="49dp"
-        android:textColor="#000000"
         android:layout_marginLeft="49dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="49dp"
@@ -75,6 +74,7 @@
         android:maxLines="1"
         android:padding="10dp"
         android:singleLine="true"
+        android:textColor="#000000"
         android:textColorHint="#797979"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
@@ -83,12 +83,11 @@
 
     <EditText
         android:id="@+id/editTextLastname"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
         android:layout_marginTop="15dp"
-        android:textColor="#000000"
         android:layout_marginEnd="49dp"
         android:layout_marginRight="49dp"
         android:background="@drawable/input_text"
@@ -97,6 +96,7 @@
         android:maxLines="1"
         android:padding="10dp"
         android:singleLine="true"
+        android:textColor="#000000"
         android:textColorHint="#797979"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
@@ -105,12 +105,11 @@
 
     <EditText
         android:id="@+id/editTextAge"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
         android:layout_marginTop="15dp"
-        android:textColor="#000000"
         android:layout_marginEnd="49dp"
         android:layout_marginRight="49dp"
         android:background="@drawable/input_text"
@@ -120,6 +119,7 @@
         android:maxLines="1"
         android:padding="10dp"
         android:singleLine="true"
+        android:textColor="#000000"
         android:textColorHint="#797979"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
@@ -128,7 +128,7 @@
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
@@ -142,6 +142,7 @@
         android:maxLines="1"
         android:padding="10dp"
         android:singleLine="true"
+        android:textColor="#000000"
         android:textColorHint="#797979"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
@@ -150,13 +151,12 @@
 
     <EditText
         android:id="@+id/editTextPasswordMatch"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="49dp"
-        android:textColor="#000000"
         android:layout_marginRight="49dp"
         android:background="@drawable/input_text"
         android:fontFamily="@font/visbyround_regular"
@@ -165,6 +165,7 @@
         android:maxLines="1"
         android:padding="10dp"
         android:singleLine="true"
+        android:textColor="#000000"
         android:textColorHint="#797979"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
@@ -173,7 +174,7 @@
 
     <CheckBox
         android:id="@+id/checkBox"
-        android:layout_width="350dp"
+        android:layout_width="330dp"
         android:layout_height="45dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/visbyround_medium"
@@ -188,7 +189,7 @@
 
     <Button
         android:id="@+id/registrationbtn"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="84dp"
         android:background="@drawable/button_login"
@@ -203,13 +204,12 @@
 
     <EditText
         android:id="@+id/editTextFirstname"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="49dp"
-        android:textColor="#000000"
         android:layout_marginRight="49dp"
         android:background="@drawable/input_text"
         android:fontFamily="@font/visbyround_regular"
@@ -217,24 +217,12 @@
         android:maxLines="1"
         android:padding="10dp"
         android:singleLine="true"
+        android:textColor="#000000"
         android:textColorHint="#797979"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginRight="128dp"
-        android:fontFamily="@font/visbyround_bold"
-        android:text="Sign In"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationbtn" />
 
     <TextView
         android:id="@+id/textView4"
@@ -243,12 +231,28 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/visbyround_regular"
         android:text="Already a member?"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
-        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintEnd_toStartOf="@+id/signin"
+        app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registrationbtn"
-        app:layout_constraintVertical_bias="0.488" />
+        app:layout_constraintVertical_bias="0.517" />
+
+    <TextView
+        android:id="@+id/signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
+        android:fontFamily="@font/visbyround_bold"
+        android:text="Sign In"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrationbtn"
+        app:layout_constraintVertical_bias="0.511" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
