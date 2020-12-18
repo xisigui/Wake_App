@@ -6,17 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/grdient_list"
+    android:background="@drawable/bg_grad_list"
     tools:context=".Dashboard">
 
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/changeProfilePicture"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
+        android:background="@drawable/bg_round"
+        app:layout_constraintBottom_toTopOf="@+id/resetImage"
+        app:layout_constraintEnd_toStartOf="@+id/profile_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner"
         app:srcCompat="@android:drawable/ic_menu_gallery"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="80dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -177,12 +185,21 @@
         app:layout_constraintTop_toBottomOf="@+id/banner" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/ic_menu_gallery"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="131dp"
+        android:id="@+id/resetImage"
+        android:layout_width="38dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
+        android:layout_marginBottom="72dp"
+        android:background="@drawable/bg_round"
+        app:layout_constraintBottom_toTopOf="@+id/emailBanner"
+        app:layout_constraintEnd_toStartOf="@+id/profile_image"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/changeProfilePicture"
+        app:srcCompat="@android:drawable/ic_menu_revert"
         tools:ignore="MissingConstraints" />
 
 
