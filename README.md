@@ -1,6 +1,7 @@
 # Todo List
 - Caller UI
-- dashboard(pag feed ng users/callers sa main activity)
-- user profile(improved UI)
+- Dashboard(pag feed ng users/callers sa main activity)
+- User's profile(improved UI)
 - scheduling (for customers)
 - Navigation Menu
+- App Logo
