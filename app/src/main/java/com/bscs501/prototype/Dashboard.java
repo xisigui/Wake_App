@@ -32,6 +32,7 @@ public class Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
         logout = (Button) findViewById(R.id.logoutbtn);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +47,6 @@ public class Dashboard extends AppCompatActivity {
         AD.setEnterFadeDuration(2000);
         AD.setExitFadeDuration(4000);
         AD.start();
-
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("User");

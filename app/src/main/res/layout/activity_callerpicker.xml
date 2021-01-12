@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#292A3A"
+    android:background="@color/Primary"
     android:clipChildren="false">
 
     <LinearLayout
@@ -73,8 +73,7 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                app:backgroundTint="@android:color/white"
-                />
+                app:backgroundTint="@android:color/white"/>
 
         </RelativeLayout>
 
@@ -91,8 +90,7 @@
         <com.yuyakaido.android.cardstackview.CardStackView
             android:id="@+id/card_stack_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </com.yuyakaido.android.cardstackview.CardStackView>
+            android:layout_height="match_parent"/>
 
     </RelativeLayout>
 
