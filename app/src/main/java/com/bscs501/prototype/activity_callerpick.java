@@ -3,6 +3,7 @@ package com.bscs501.prototype;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
 import com.yuyakaido.android.cardstackview.CardStackListener;
 import com.yuyakaido.android.cardstackview.CardStackView;
@@ -27,6 +29,7 @@ public class activity_callerpick extends AppCompatActivity implements CardStackL
     private CardStackLayoutManager manager;
     private CardStackAdapter adapter;
     private CardStackView cardStackView;
+    private BottomNavigationView navigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,25 @@ public class activity_callerpick extends AppCompatActivity implements CardStackL
         setContentView(R.layout.activity_callerpicker);
         refresh();
         setupButton();
+        navigation = findViewById(R.id.bottom_navigation);
+        navigation.setSelectedItemId(R.id.dash);
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.dash:
+                        overridePendingTransition(0,0);
+                        break;
+                    case R.id.pro:
+                        startActivity(new Intent(activity_callerpick.this, Dashboard.class));
+                        overridePendingTransition(0,0);
+                        break;
+                }
+                return true;
+            }
+        });
     }
+
     private void setupButton() {
         View skip = findViewById(R.id.skip_button);
         skip.setOnClickListener(new View.OnClickListener() {
