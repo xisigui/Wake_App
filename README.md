@@ -4,4 +4,4 @@
 - User's profile(improved UI)
 - scheduling (for customers)
 - Navigation Menu
-<ins> App Logo </ins>
+- <ins> App Logo </ins>
