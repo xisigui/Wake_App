@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -45,6 +47,7 @@ public class Dashboard extends AppCompatActivity {
     private Uri imageUri;
     private FirebaseStorage storage;
     private StorageReference storageReference;
+    private BottomNavigationView navigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,24 @@ public class Dashboard extends AppCompatActivity {
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(4000);
         animationDrawable.start();
+
+        navigation = findViewById(R.id.bottom_navigation);
+        navigation.setSelectedItemId(R.id.pro);
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.dash:
+                        startActivity(new Intent(Dashboard.this, activity_callerpick.class));
+                        overridePendingTransition(0,0);
+                        break;
+                    case R.id.pro:
+                        overridePendingTransition(0,0);
+                        break;
+                }
+                return true;
+            }
+        });
 
         logout = (Button) findViewById(R.id.logoutbtn);
         logout.setOnClickListener(new View.OnClickListener() {
@@ -78,14 +99,11 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-
-
         ConstraintLayout LL = findViewById(R.id.Dashboard);
         AnimationDrawable AD = (AnimationDrawable) LL.getBackground();
         AD.setEnterFadeDuration(2000);
         AD.setExitFadeDuration(4000);
         AD.start();
-
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("User");
@@ -119,6 +137,7 @@ public class Dashboard extends AppCompatActivity {
             }
         });
     }
+
     private void choosePicture(){
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -139,7 +158,6 @@ public class Dashboard extends AppCompatActivity {
     }
 
     private void uploadPicture() {
-
         final String randomKey = UUID.randomUUID().toString();
         StorageReference riversRef = storageReference.child("images/" + randomKey );
         final ProgressDialog pd = new ProgressDialog(this);
@@ -163,6 +181,4 @@ public class Dashboard extends AppCompatActivity {
                 });
 
     }
-
-
 }
