@@ -107,9 +107,9 @@ public class Dashboard extends AppCompatActivity {
                     String email = userProfile.email;
                     String age = userProfile.age;
 
-                    fullnameTextView.setText(firstname + " " + middlename + " " + lastname);
-                    emailTextView.setText(email);
-                    ageTextView.setText(age);
+                    fullnameTextView.setText("  " +firstname + " " + middlename + " " + lastname);
+                    emailTextView.setText("  "+ email);
+                    ageTextView.setText("  "+ age);
                 }
             }
 

@@ -20,18 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.137" />
-    <TextView
-        android:id="@+id/textView90"
-        android:layout_width="365dp"
-        android:layout_height="400dp"
-        android:layout_marginTop="9dp"
-        android:background="@drawable/box2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.503" />
 
 
     <TextView
@@ -95,7 +83,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:background="#ED5F5F"
+
         android:text="Age: "
         android:textColor="#000000"
         android:textStyle="bold"
@@ -113,7 +101,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
-        android:background="#ED5F5F"
+
         android:text="Full Name: "
         android:textColor="#000000"
         android:textStyle="bold"
@@ -124,15 +112,15 @@
 
     <TextView
         android:id="@+id/fullnameTextview"
-        android:layout_width="360dp"
-        android:layout_height="19dp"
+        android:layout_width="273dp"
+        android:layout_height="24dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        android:background="#70FFFFFF"
-        android:textColor="#000000"
+        android:background="@drawable/box3"
+        android:textColor="#F1F1F1"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="0.0"
@@ -158,15 +146,15 @@
 
     <TextView
         android:id="@+id/emailTextview"
-        android:layout_width="362dp"
-        android:layout_height="21dp"
+        android:layout_width="273dp"
+        android:layout_height="26dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:background="#70FFFFFF"
-        android:textColor="#000000"
+        android:background="@drawable/box3"
+        android:textColor="#F1F1F1"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -175,23 +163,23 @@
 
     <TextView
         android:id="@+id/ageTextview"
-        android:layout_width="356dp"
-        android:layout_height="19dp"
+        android:layout_width="276dp"
+        android:layout_height="26dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:layout_marginBottom="109dp"
-        android:background="#70FFFFFF"
-        android:textColor="#000000"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="82dp"
+        android:background="@drawable/box3"
+        android:textColor="#F1F1F1"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/logoutbtn"
+        app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ageBanner"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.100000024" />
 
     <TextView
         android:id="@+id/emailBanner"
@@ -202,7 +190,7 @@
         android:layout_marginTop="200dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
-        android:background="#ED5F5F"
+
         android:text="Email: "
         android:textColor="#000000"
         android:textStyle="bold"
