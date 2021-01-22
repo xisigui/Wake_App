@@ -10,6 +10,19 @@
     tools:context=".Dashboard">
 
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="365dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.503" />
+
     <ImageButton
         android:id="@+id/changeProfilePicture"
         android:layout_width="36dp"
@@ -56,7 +69,7 @@
         android:layout_marginBottom="54dp"
 
         android:src="@drawable/sleep"
-        app:civ_border_color="#FFF8F8"
+        app:civ_border_color="#9F6969"
         app:civ_border_width="6dp"
         app:layout_constraintBottom_toTopOf="@+id/emailBanner"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +89,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:text="Age: "
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -93,7 +106,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:text="Full Name: "
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -110,6 +123,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:background="#70FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -125,6 +139,7 @@
         android:gravity="center"
         android:text="logout"
         android:textColor="#ffffff"
+
         app:backgroundTint="@color/Secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,6 +158,7 @@
         android:layout_marginRight="20dp"
         android:background="#70FFFFFF"
         android:textStyle="bold"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -159,6 +175,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="109dp"
         android:background="#70FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/logoutbtn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -177,7 +194,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:text="Email: "
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -225,5 +242,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/navigation_menu" />
     </RelativeLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
