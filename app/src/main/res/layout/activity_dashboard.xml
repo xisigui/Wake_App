@@ -118,16 +118,16 @@
 
     <Button
         android:id="@+id/logoutbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_marginTop="267dp"
         android:background="@drawable/button_login"
+        android:gravity="center"
         android:text="logout"
         android:textColor="#ffffff"
-        app:backgroundTint="#FF6161"
+        app:backgroundTint="@color/Secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailTextview"
         app:layout_constraintVertical_bias="0.0" />
@@ -202,5 +202,28 @@
         app:srcCompat="@android:drawable/ic_menu_revert"
         tools:ignore="MissingConstraints" />
 
+    <RelativeLayout
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:itemTextColor="@color/Secondary"
+            app:labelVisibilityMode="selected"
+            app:itemIconTint="@color/Secondary"
+            app:itemRippleColor="@color/Secondary"
+            android:background="@color/Primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/navigation_menu" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

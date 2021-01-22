@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Main"
-    android:background="@drawable/grdient_list"
+    android:background="@color/Primary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
@@ -37,7 +37,7 @@
     <EditText
         android:id="@+id/status"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
@@ -60,7 +60,7 @@
         <EditText
         android:id="@+id/password"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
@@ -99,7 +99,7 @@
         app:rb_animation_progress_padding="10dp"
         app:rb_animation_progress_style="circle"
         app:rb_animation_progress_width="2dp"
-        app:rb_background_color="#FF6161"
+        app:rb_background_color="@color/Secondary"
         app:rb_corner_radius="20dp"
         app:rb_text_color="@color/white"
         tools:ignore="MissingConstraints" />
@@ -168,5 +168,23 @@
         app:layout_constraintBottom_toBottomOf="@+id/password"
         app:layout_constraintEnd_toEndOf="@+id/password"/>
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="40dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/over"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF6161"
+        android:orientation="horizontal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

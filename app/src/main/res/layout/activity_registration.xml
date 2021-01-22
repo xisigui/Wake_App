@@ -9,18 +9,6 @@
     android:background="#232430"
     tools:context=".Registration">
 
-
-    <androidx.core.widget.ContentLoadingProgressBar
-        android:id="@+id/progressbar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="300dp"
@@ -56,8 +44,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextMiddlename"
@@ -196,7 +183,6 @@
         android:fontFamily="@font/visbyround_bold"
         android:text="Create Account"
         android:textColor="#ffffff"
-        app:backgroundTint="#FF6161"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
@@ -230,8 +216,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/visbyround_regular"
-        android:text="Already a member?"
         android:gravity="center"
+        android:text="Already a member?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/signin"
         app:layout_constraintHorizontal_bias="0.92"
@@ -247,12 +233,11 @@
         android:layout_marginEnd="112dp"
         android:layout_marginRight="112dp"
         android:fontFamily="@font/visbyround_bold"
-        android:text="Sign In"
         android:gravity="center"
+        android:text="Sign In"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registrationbtn"
         app:layout_constraintVertical_bias="0.511" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
