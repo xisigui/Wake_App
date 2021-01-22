@@ -5,8 +5,9 @@
     android:id="@+id/linearLayoutCompat"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:layout_gravity="center"
-    android:background="#232430"
+    android:background="@drawable/grdient_list"
     tools:context=".Registration">
 
     <EditText

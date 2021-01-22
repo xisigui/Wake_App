@@ -9,6 +9,30 @@
     android:background="@drawable/bg_grad_list"
     tools:context=".Dashboard">
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="160dp"
+        android:layout_height="150dp"
+        android:background="@drawable/bg_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.137" />
+    <TextView
+        android:id="@+id/textView90"
+        android:layout_width="365dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/box2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.503" />
+
 
     <TextView
         android:id="@+id/textView5"
@@ -18,27 +42,10 @@
         android:background="@drawable/box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.503" />
-
-    <ImageButton
-        android:id="@+id/changeProfilePicture"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginRight="61dp"
-        android:background="@drawable/bg_round"
-        app:layout_constraintBottom_toTopOf="@+id/resetImage"
-        app:layout_constraintEnd_toStartOf="@+id/profile_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banner"
-        app:srcCompat="@android:drawable/ic_menu_gallery"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.484" />
 
     <TextView
         android:id="@+id/banner"
@@ -62,7 +69,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
+        android:id="@+id/profilePic"
         android:layout_width="145dp"
         android:layout_height="146dp"
         android:layout_marginTop="26dp"
@@ -81,51 +88,53 @@
 
     <TextView
         android:id="@+id/ageBanner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="366dp"
+        android:layout_height="19dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
+        android:background="#ED5F5F"
         android:text="Age: "
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fullnameTextview" />
 
     <TextView
         android:id="@+id/fullnameBanner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="364dp"
+        android:layout_height="22dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:background="#ED5F5F"
         android:text="Full Name: "
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailTextview" />
 
     <TextView
         android:id="@+id/fullnameTextview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="360dp"
+        android:layout_height="19dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
         android:background="#70FFFFFF"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fullnameBanner" />
@@ -149,16 +158,16 @@
 
     <TextView
         android:id="@+id/emailTextview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="362dp"
+        android:layout_height="21dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:background="#70FFFFFF"
-        android:textStyle="bold"
         android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -166,19 +175,19 @@
 
     <TextView
         android:id="@+id/ageTextview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="356dp"
+        android:layout_height="19dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
         android:layout_marginBottom="109dp"
         android:background="#70FFFFFF"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/logoutbtn"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ageBanner"
@@ -186,38 +195,21 @@
 
     <TextView
         android:id="@+id/emailBanner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="364dp"
+        android:layout_height="21dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="200dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:background="#ED5F5F"
         android:text="Email: "
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/banner" />
-
-    <ImageButton
-        android:id="@+id/resetImage"
-        android:layout_width="38dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginRight="61dp"
-        android:layout_marginBottom="72dp"
-        android:background="@drawable/bg_round"
-        app:layout_constraintBottom_toTopOf="@+id/emailBanner"
-        app:layout_constraintEnd_toStartOf="@+id/profile_image"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/changeProfilePicture"
-        app:srcCompat="@android:drawable/ic_menu_revert"
-        tools:ignore="MissingConstraints" />
 
     <RelativeLayout
         android:id="@+id/navigation"
@@ -232,16 +224,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            app:itemTextColor="@color/Secondary"
-            app:labelVisibilityMode="selected"
+            android:background="@color/Primary"
             app:itemIconTint="@color/Secondary"
             app:itemRippleColor="@color/Secondary"
-            android:background="@color/Primary"
+            app:itemTextColor="@color/Secondary"
+            app:labelVisibilityMode="selected"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/navigation_menu" />
     </RelativeLayout>
+
 
 
 

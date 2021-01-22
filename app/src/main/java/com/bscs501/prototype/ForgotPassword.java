@@ -2,8 +2,10 @@ package com.bscs501.prototype;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -29,6 +31,11 @@ public class ForgotPassword extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
+        ConstraintLayout constraintLayout = findViewById(R.id.pwReset);
+        AnimationDrawable animationDrawable =(AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(4000);
+        animationDrawable.start();
 
         emailEditText = (EditText) findViewById(R.id.status);
         resetButton = (Button) findViewById(R.id.resetpasswordbtn);

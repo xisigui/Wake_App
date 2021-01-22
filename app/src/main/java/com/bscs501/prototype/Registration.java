@@ -2,8 +2,10 @@ package com.bscs501.prototype;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -34,6 +36,11 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         mAuth = FirebaseAuth.getInstance();
+        ConstraintLayout constraintLayout = findViewById(R.id.linearLayoutCompat);
+        AnimationDrawable animationDrawable =(AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(4000);
+        animationDrawable.start();
 
         registrationbtn = (Button) findViewById(R.id.registrationbtn);
         banner = (TextView) findViewById(R.id.banner);
