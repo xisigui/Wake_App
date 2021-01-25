@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
     }
 
     @Override
-    public ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(inflater.inflate(R.layout.item_spot, parent, false));
     }
 
@@ -53,6 +54,7 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
         TextView name;
         TextView city;
         private ImageView image;
+
         ViewHolder(View view) {
             super(view);
             this.name = view.findViewById(R.id.item_name);

@@ -24,7 +24,7 @@ import com.yuyakaido.android.cardstackview.SwipeAnimationSetting;
 import java.util.ArrayList;
 import java.util.List;
 
-public class activity_callerpick extends AppCompatActivity implements CardStackListener{
+public class activity_callerpick extends AppCompatActivity implements CardStackListener {
 
     private CardStackLayoutManager manager;
     private CardStackAdapter adapter;
@@ -44,11 +44,11 @@ public class activity_callerpick extends AppCompatActivity implements CardStackL
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.dash:
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         break;
                     case R.id.pro:
                         startActivity(new Intent(activity_callerpick.this, Dashboard.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         break;
                 }
                 return true;
@@ -139,15 +139,24 @@ public class activity_callerpick extends AppCompatActivity implements CardStackL
         }
     }
 
-    //Required methods but no function
+    //Required methods
     @Override
-    public void onCardDragging(Direction direction, float ratio) {}
+    public void onCardDragging(Direction direction, float ratio) {
+    }
+
     @Override
-    public void onCardRewound() {}
+    public void onCardRewound() {
+    }
+
     @Override
-    public void onCardCanceled() {}
+    public void onCardCanceled() {
+    }
+
     @Override
-    public void onCardAppeared(View view, int position) {}
+    public void onCardAppeared(View view, int position) {
+    }
+
     @Override
-    public void onCardDisappeared(View view, int position) {}
+    public void onCardDisappeared(View view, int position) {
+    }
 }

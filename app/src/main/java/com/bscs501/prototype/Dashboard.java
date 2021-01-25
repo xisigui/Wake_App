@@ -57,12 +57,6 @@ public class Dashboard extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
 
-        ConstraintLayout constraintLayout = findViewById(R.id.Dashboard);
-        AnimationDrawable animationDrawable =(AnimationDrawable) constraintLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(2000);
-        animationDrawable.setExitFadeDuration(4000);
-        animationDrawable.start();
-
         navigation = findViewById(R.id.bottom_navigation);
         navigation.setSelectedItemId(R.id.pro);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -71,10 +65,10 @@ public class Dashboard extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.dash:
                         startActivity(new Intent(Dashboard.this, activity_callerpick.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         break;
                     case R.id.pro:
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         break;
                 }
                 return true;
@@ -86,48 +80,41 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
+                finish();
                 startActivity(new Intent(Dashboard.this, MainActivity.class));
             }
         });
 
-        profilePic.setOnClickListener(new View.OnClickListener(){
-
+        profilePic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 choosePicture();
 
             }
         });
-
-        ConstraintLayout LL = findViewById(R.id.Dashboard);
-        AnimationDrawable AD = (AnimationDrawable) LL.getBackground();
-        AD.setEnterFadeDuration(2000);
-        AD.setExitFadeDuration(4000);
-        AD.start();
-
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("User");
         userID = user.getUid();
 
-        final TextView fullnameTextView = (TextView)findViewById(R.id.fullnameTextview);
-        final TextView emailTextView = (TextView)findViewById(R.id.emailTextview);
-        final TextView ageTextView = (TextView)findViewById(R.id.ageTextview);
+        final TextView fullnameTextView = (TextView) findViewById(R.id.fullnameTextview);
+        final TextView emailTextView = (TextView) findViewById(R.id.emailTextview);
+        final TextView ageTextView = (TextView) findViewById(R.id.ageTextview);
 
         reference.child(userID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);
 
-                if(userProfile != null){
+                if (userProfile != null) {
                     String firstname = userProfile.firstname;
                     String middlename = userProfile.middlename;
                     String lastname = userProfile.lastname;
                     String email = userProfile.email;
                     String age = userProfile.age;
 
-                    fullnameTextView.setText("  " +firstname + " " + middlename + " " + lastname);
-                    emailTextView.setText("  "+ email);
-                    ageTextView.setText("  "+ age);
+                    fullnameTextView.setText("  " + firstname + " " + middlename + " " + lastname);
+                    emailTextView.setText("  " + email);
+                    ageTextView.setText("  " + age);
                 }
             }
 
@@ -136,49 +123,53 @@ public class Dashboard extends AppCompatActivity {
                 Toast.makeText(Dashboard.this, "Something went wrong", Toast.LENGTH_LONG).show();
             }
         });
+        animate_bg();
     }
 
-    private void choosePicture(){
+    private void animate_bg() {
+        ConstraintLayout constraintLayout = findViewById(R.id.Dashboard);
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(2000);
+        animationDrawable.start();
+    }
+
+    private void choosePicture() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, 1);
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==1 && resultCode==RESULT_OK && data.getData()!=null){
+        if (requestCode == 1 && resultCode == RESULT_OK && data.getData() != null) {
             imageUri = data.getData();
             profilePic.setImageURI(imageUri);
             uploadPicture();
         }
-
     }
 
     private void uploadPicture() {
         final String randomKey = UUID.randomUUID().toString();
-        StorageReference riversRef = storageReference.child("images/" + randomKey );
+        StorageReference riversRef = storageReference.child("images/" + randomKey);
         final ProgressDialog pd = new ProgressDialog(this);
         pd.setTitle("Uploading, One moment please...");
         pd.show();
 
-        riversRef.putFile(imageUri)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        riversRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         pd.dismiss();
                         Snackbar.make(findViewById(android.R.id.content), "Profile Picture Uploaded.", Snackbar.LENGTH_LONG).show();
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
+                }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception exception) {
                         pd.dismiss();
-                       Toast.makeText(getApplicationContext(), "Picture Failed to Upload", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Picture Failed to Upload", Toast.LENGTH_LONG).show();
                     }
                 });
-
     }
 }

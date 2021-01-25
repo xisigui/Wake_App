@@ -28,7 +28,6 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
     private Button registrationbtn;
     private TextView sign;
     private CheckBox checkBox;
-
     private FirebaseAuth mAuth;
 
     @Override
@@ -37,7 +36,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_registration);
         mAuth = FirebaseAuth.getInstance();
         ConstraintLayout constraintLayout = findViewById(R.id.linearLayoutCompat);
-        AnimationDrawable animationDrawable =(AnimationDrawable) constraintLayout.getBackground();
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(4000);
         animationDrawable.start();
@@ -71,7 +70,6 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
             case R.id.banner:
                 startActivity(new Intent(this, MainActivity.class));
@@ -96,7 +94,6 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
     }
 
     private void registerUser() {
-
         String email = editTextEmail.getText().toString().trim();
         String firstname = editTextFirstname.getText().toString().trim();
         String middlename = editTextmiddlename.getText().toString().trim();
@@ -162,7 +159,6 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-
                         if (task.isSuccessful()) {
                             User user = new User(firstname, middlename, lastname, email, age);
                             FirebaseDatabase.getInstance().getReference("User")

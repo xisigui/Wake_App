@@ -32,14 +32,14 @@ public class ForgotPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
         ConstraintLayout constraintLayout = findViewById(R.id.pwReset);
-        AnimationDrawable animationDrawable =(AnimationDrawable) constraintLayout.getBackground();
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(4000);
         animationDrawable.start();
 
         emailEditText = (EditText) findViewById(R.id.status);
         resetButton = (Button) findViewById(R.id.resetpasswordbtn);
-        progressBar = (ProgressBar)findViewById(R.id.progressbar);
+        progressBar = (ProgressBar) findViewById(R.id.progressbar);
 
         auth = FirebaseAuth.getInstance();
 
@@ -50,15 +50,16 @@ public class ForgotPassword extends AppCompatActivity {
             }
         });
     }
+
     private void resetPassword() {
         String email = emailEditText.getText().toString().trim();
 
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             emailEditText.setError("Email is empty");
             emailEditText.requestFocus();
             return;
         }
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             emailEditText.setError("Please provide valid email");
             emailEditText.requestFocus();
             return;
@@ -67,7 +68,7 @@ public class ForgotPassword extends AppCompatActivity {
         auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     Toast.makeText(ForgotPassword.this, "Please check your email to reset your password", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                     startActivity(new Intent(ForgotPassword.this, MainActivity.class));

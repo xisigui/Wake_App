@@ -30,7 +30,7 @@ import com.marozzi.roundbutton.RoundButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView registraiton, forgotpassword, showbtn, k;
+    private TextView registraiton, forgotpassword, showbtn;
     private EditText editTextEmail, editTextPassword;
     private RoundButton loginbtn;
     private FirebaseAuth mAuth;
@@ -41,14 +41,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ConstraintLayout constraintLayout = findViewById(R.id.Main);
-        AnimationDrawable animationDrawable =(AnimationDrawable) constraintLayout.getBackground();
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(4000);
         animationDrawable.start();
 
         background = findViewById(R.id.over);
         TextView wake = findViewById(R.id.textView);
-        k = findViewById(R.id.textView2);
         loginbtn = (RoundButton) findViewById(R.id.loginbtn);
         registraiton = (TextView) findViewById(R.id.registrationbtn);
         showbtn = (TextView) findViewById(R.id.showbtn);
@@ -57,11 +56,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         registraiton.setOnClickListener(this);
         loginbtn.setOnClickListener(this);
-        k.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, activity_callerpick.class));
-            }
-        });
 
         showbtn.setVisibility(View.GONE);
         editTextPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
@@ -74,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     showbtn.setVisibility(View.GONE);
                 }
             }
-
+            //Required methods
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
@@ -162,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         editTextEmail.clearComposingText();
                         editTextPassword.clearComposingText();
                         circularRevealActivity();
-                        startActivity(new Intent(MainActivity.this, Dashboard.class));
+                        startActivity(new Intent(MainActivity.this, activity_callerpick.class));
                         finish();
                     } else {
                         user.sendEmailVerification();
